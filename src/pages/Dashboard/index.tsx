@@ -8,16 +8,18 @@ import ModalEditFood from '../../components/ModalEditFood';
 import { FoodsContainer } from './styles';
 import { string } from 'yup';
 
-type TFood = {
+export type TFood = {
   id: string
   name: string
   description: string
   price: number
+  available: boolean
+  image: string
 }
 
 function Dashboard() {
   const [foods, setFoods] = useState<TFood[]>()
-  const [editingFood, setEditingFood] = useState<TFood>()
+  const [editingFood, setEditingFood] = useState<TFood>({} as TFood)
   const [modalOpen, setModalOpen] = useState(false)
   const [editModalOpen, setEditModalOpen] = useState(false)
 
